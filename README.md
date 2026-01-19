@@ -120,6 +120,24 @@ git pull origin main
 
 See [AGENTS.md](./AGENTS.md) for detailed documentation on command structure and framework detection.
 
+## Hooks
+
+Prompt preprocessing hooks in `claude/hooks/`:
+
+| Hook | Purpose |
+|------|---------|
+| `expand-promptcuts.sh` | Expand text shortcuts from `promptcuts.yaml` |
+| `expand-bang-commands.py` | Execute `` `! command` `` inline in prompts |
+| `permission_handler.py` | Custom AppleScript permission dialog |
+
+**Bang Command Expansion**:
+```
+Input:  "Files in `! ls src` directory"
+Output: "Files in `main.ts utils.ts` directory"
+```
+
+Commands run in the session's working directory.
+
 ## Privacy & Security
 
 - `settings.json` is excluded (contains tokens, env vars)
