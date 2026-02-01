@@ -1,0 +1,32 @@
+clis:
+  claude:
+    package: "@anthropic-ai/claude-code"
+    version: 2.1.29
+  codex:
+    package: "@openai/codex"
+    version: 0.92.0
+  gemini:
+    package: "@google/gemini-cli"
+    version: 0.25.2
+  opencode:
+    package: ""
+    version: latest
+  cursor:
+    package: ""
+    version: 2026.01.23
+dependencies: {}
+mcp:
+  Swarm:
+    command: npx -y @swarmify/agents-mcp@latest
+    transport: stdio
+    agents:
+      - claude
+      - codex
+    scope: user
+defaults:
+  method: symlink
+  scope: global
+  agents:
+    - claude
+    - codex
+    - gemini
